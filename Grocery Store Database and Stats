@@ -1,0 +1,37 @@
+CREATE TABLE bookmarks (id INTEGER PRIMARY KEY, item TEXT, quantity INTEGER, price INTEGER, book_type TEXT, shape TEXT, string INTEGER);
+
+INSERT INTO bookmarks VALUES (1, "pink", 65, .55, "paperback", "standard", 1);
+INSERT INTO bookmarks VALUES (2, "red", 55, .55, "paperback", "standard", 1);
+INSERT INTO bookmarks VALUES (3, "orange", 24, .50, "paperback", "standard", 1);
+INSERT INTO bookmarks VALUES (4, "yellow", 37, .55, "paperback", "standard", 1);
+INSERT INTO bookmarks VALUES (5, "green", 58, .55, "paperback", "standard", 1);
+INSERT INTO bookmarks VALUES (6, "purple", 47, .55, "paperback", "standard", 1);
+INSERT INTO bookmarks VALUES (7, "brown", 24, .50, "paperback", "standard", 0);
+INSERT INTO bookmarks VALUES (8, "black", 28, .55, "paperback", "standard", 1);
+INSERT INTO bookmarks VALUES (9, "monochrome stripped", 13, .65, "paperback", "standard, unique", 0);
+INSERT INTO bookmarks VALUES (10, "multicolored stripped", 16, .65, "paperback", "standard, unique", 0);
+INSERT INTO bookmarks VALUES (11, "rainbow", 41, 1.00, "paperback", "unique", 1);
+INSERT INTO bookmarks VALUES (12, "tie-dye", 23, .75, "paperback","unique", 1);
+INSERT INTO bookmarks VALUES (13, "animal print", 46, 1.00, "hardcover", "standard, unique", 0);
+INSERT INTO bookmarks VALUES (14, "landscape", 65, 1.25, "hardcover", "standard", 0);
+INSERT INTO bookmarks VALUES (15, "fandom", 73, 1.25, "hardcover", "standard, unique", 1);
+SELECT * FROM bookmarks;
+
+SELECT item FROM bookmarks WHERE quantity > 25 ORDER BY quantity;
+
+SELECT item FROM bookmarks ORDER BY price;
+SELECT price FROM bookmarks ORDER BY price;
+SELECT item, MAX(price) FROM bookmarks GROUP BY book_type;
+
+
+SELECT MAX(price) FROM bookmarks ORDER BY price;
+
+SELECT SUM(quantity) FROM bookmarks GROUP BY book_type;
+SELECT SUM(quantity) FROM bookmarks;
+
+SELECT item FROM bookmarks GROUP BY string;
+SELECT * FROM bookmarks ORDER BY price;
+SELECT * FROM bookmarks ORDER BY quantity;
+
+SELECT shape FROM bookmarks GROUP BY shape;
+SELECT SUM(string) FROM bookmarks GROUP BY shape;
